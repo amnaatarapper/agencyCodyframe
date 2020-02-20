@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <script>
+    if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
+      document.write('<link rel="stylesheet" href="assets/css/style.css">');
+    } else {
+      document.write('<link rel="stylesheet" href="assets/css/style-fallback.css">');
+    }
+  </script>
+  <noscript>
+    <link rel="stylesheet" href="assets/css/style-fallback.css">
+  </noscript>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">  
+  <title>CasbahTech Studio</title>
+</head>
+<body>
+  <header class="header bg-primary position-fixed top-0 width-100% js-header">
+    <div class="header__container container max-width-lg">
+      <div class="header__logo font-tertiary">
+        <a href="#0" class="">CasbahTech Studio</a>
+      </div>
+  
+      <button class="btn btn--primary color-contrast-higher header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
+        <i class="header__trigger-icon" aria-hidden="true"></i>
+        <span>Menu</span>
+      </button>
+  
+      <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
+        <div class="header__nav-inner">
+          <ul class="header__list font-primary text-uppercase">
+            <li class="header__item"><a href="#0" class="header__link">services</a></li>
+            <li class="header__item"><a href="#0" class="header__link">portfolio</a></li>
+            <!-- <li class="header__item"><a href="#0" class="header__link" aria-current="page">about</a></li> -->
+            <li class="header__item"><a href="#0" class="header__link">about</a></li>
+            <li class="header__item"><a href="#0" class="header__link">team</a></li>
+            <li class="header__item"><a href="#0" class="header__link active">contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero height-100vh width-100vw flex flex-column flex-center">
+    <h4 class="color-accent">Welcome to CasbahTech!</h4>
+    <h3 class="font-primary font-bold color-accent">IT'S NICE TO MEET YOU</h3>
+    <a href="#" class="font-primary font-bold btn btn--primary btn--sm">TELL ME MORE</a>
+  </section>
+
+
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import 'base';
+@import 'custom-style';
+
+// Importing Components
+@import 'components/**/*.scss';
+
+// Styles
+a {
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    font-size: .7em;
+    background-color: transparent;
+    @include breakpoint(xxs) {
+        padding: 0;
+    }
+    @include breakpoint(md) {
+        padding: 0 3em;
+    }
+    .header__logo {
+        @include breakpoint(xxs) {
+            font-size: 1.1rem;
+        }
+        @include breakpoint(sm) {
+            font-size: 1.4rem;
+        }
+        @include breakpoint(md) {
+            font-size: 1.9rem;
+        }
+        @include breakpoint(xl) {
+            font-size: 2.3rem;
+        }
+    }
+    .header__nav {
+        
+        li {
+            a {
+                @include breakpoint(xxs) {
+                    color: var(var(--color-accent-darker));
+                }
+                @include breakpoint(md) {
+                    color: var(--color-white);
+                }
+            } 
+            a:hover {
+                color: var(--color-primary);
+            }
+            a.active {
+                color: var(--color-primary);
+            }
+        }
+    }
+    
+}
+
+.hero {
+    background: url('../img/hero.jpg');
+    background-position: center;
+    background-size: cover;
+    > * {
+        padding-bottom: var(--space-xxxs);
+    }
+    a {
+        padding: .7em 1em;
+    }
+    a:hover {
+        $primary: #fec301;
+        background-color: darken($primary, $amount: 3%);
+    }
+}

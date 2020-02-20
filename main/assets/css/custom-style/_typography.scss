@@ -1,0 +1,69 @@
+:root {
+  // font family
+  --font-primary: Montserrat, sans-serif;
+  --font-secondary: Roboto Slab, serif;
+  --font-tertiary: Kaushan Script, cursive;
+
+  // body font size
+  --text-base-size: 1em;
+  
+  // type scale
+  --text-scale-ratio: 1.2;
+  --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+  // line-height
+  --body-line-height: 1.4;
+  --heading-line-height: 1.2;
+
+  // capital letters - used in combo with the lhCrop mixin
+  --font-primary-capital-letter: .9;
+  --font-secondary-capital-letter: 1;
+  --font-tertiary-capital-letter: 1;
+}
+
+@supports(--css: variables) {
+  :root {
+    @include breakpoint(xs) {
+      --text-base-size: 1em;
+      --text-scale-ratio: 1;
+    }
+    @include breakpoint(sm) {
+      --text-base-size: 1.25em;
+      --text-scale-ratio: 1.25;
+    }
+
+    @include breakpoint(md) {
+      --text-base-size: 1.35em;
+      --text-scale-ratio: 1.35;
+    }
+
+    @include breakpoint(lg) {
+      --text-base-size: 1.5em;
+      --text-scale-ratio: 1.4;
+    }
+    @include breakpoint(xl) {
+      --text-base-size: 2em;
+      --text-scale-ratio: 1.5;
+    }
+  }
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-tertiary);
+  font-weight: 700;
+}
+
+// font family
+.font-primary { font-family: var(--font-primary);}
+.font-secondary { font-family: var(--font-secondary);}
+.font-tertiary { font-family: var(--font-tertiary);}
