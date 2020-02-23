@@ -80,7 +80,8 @@ a {
         position: absolute;
         height: 100%;
         width: 100%;
-        background: url('../img/hero.jpg');
+        // background: url('../img/hero.jpg');
+        background: url('https://benellimotos.fr/wp-content/uploads/2018/06/TRK_502_mainbanner.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -88,9 +89,10 @@ a {
         // Parallax easing on mouse mouvement
         transition: .2s;
         transition-delay: transfrom .1s;
+        background-color: darken($color: #fec301, $amount: 40%);
+        background-blend-mode: overlay;
     }
-    
-  
+
     .container {
         > * {
             padding-bottom: var(--space-xxxs);
