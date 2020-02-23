@@ -331,3 +331,4 @@ window.addEventListener('mousemove', (e) => {
 
     heroBg.style.backgroundPosition = -mouseX + "px " + -mouseY + "px";
 });
+

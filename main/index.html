@@ -1,22 +1,28 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <script>
-    if('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
+    document.getElementsByTagName("html")[0].className += " js";
+  </script>
+  <script>
+    if ('CSS' in window && CSS.supports('color', 'var(--color-var)')) {
       document.write('<link rel="stylesheet" href="assets/css/style.css">');
     } else {
       document.write('<link rel="stylesheet" href="assets/css/style-fallback.css">');
     }
   </script>
+  <script src="https://use.fontawesome.com/e852d4c62a.js"></script>
   <noscript>
     <link rel="stylesheet" href="assets/css/style-fallback.css">
   </noscript>
-  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat|Roboto+Slab&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat|Roboto+Slab&display=swap"
+    rel="stylesheet">
   <title>CasbahTech Studio</title>
 </head>
+
 <body>
   <header class="header bg-primary position-fixed top-0 width-100% js-header">
     <div class="container">
@@ -24,16 +30,17 @@
         <div class="header__logo font-tertiary">
           <a href="#0" class="logo">CasbahTech Studio</a>
         </div>
-    
-        <button class="btn btn--primary color-contrast-higher header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
+
+        <button class="btn btn--primary color-contrast-higher header__trigger js-header__trigger"
+          aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
           <i class="header__trigger-icon" aria-hidden="true"></i>
           <span>Menu</span>
         </button>
-    
+
         <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
           <div class="header__nav-inner">
             <ul class="header__list font-primary text-uppercase">
-              <li class="header__item"><a href="#0" class="header__link">services</a></li>
+              <li class="header__item"><a href="#services" class="header__link">services</a></li>
               <li class="header__item"><a href="#0" class="header__link">portfolio</a></li>
               <li class="header__item"><a href="#0" class="header__link">about</a></li>
               <li class="header__item"><a href="#0" class="header__link">team</a></li>
@@ -45,31 +52,71 @@
     </div>
   </header>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                                  HERO                                   -->
-<!-- ----------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                  HERO                                   -->
+  <!-- ----------------------------------------------------------------------- -->
 
-<section class="hero height-100vh width-100vw flex flex-center overflow-hidden" id="hero">
-  <div class="hero__bg"></div>
-  <div class="hero__content container text-center slide-in">
-    <h4 class="color-white">Welcome to CasbahTech!</h4>
-    <h3 class="font-primary font-bold color-white">IT'S NICE TO MEET YOU</h3>
-    <a href="#" class="hero__btn font-primary font-bold btn btn--primary btn--sm color-black">TELL ME MORE</a>
-  </div>
+  <section class="hero height-100vh width-100vw flex flex-center overflow-hidden" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content container text-center slide-in">
+      <h4 class="color-white">Welcome to CasbahTech!</h4>
+      <h3 class="font-primary font-bold color-white">IT'S NICE TO MEET YOU</h3>
+      <a href="#" class="hero__btn font-primary font-bold btn btn--primary btn--sm color-black">TELL ME MORE</a>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                SERVICES                                 -->
+  <!-- ----------------------------------------------------------------------- -->
+
+  <section class="services width-100vw bg-contrast-lower" id="services">
+    <div class="services__content container padding-y-xl text-center">
+      <h2>Services</h2>
+      <h4 class="color-accent-lighter">Lorem ipsum dolor</h4>
+    </div>
+    <div class="services__content container text-center">
+      <div class="grid grid-gap-lg">
+        <div class="col-12@xs col-6@sm col-4@md">
+          <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-cart"
+              class="svg-inline--fa fa-shopping-cart fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512">
+              <path fill="var(--color-primary)"
+                d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z">
+              </path>
+            </svg>
+          </div>
+          <h3>E-Commerce</h3>
+          <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo
+            inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-12@xs col-6@sm col-4@md">
+          <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pencil-ruler" class="svg-inline--fa fa-pencil-ruler fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="var(--color-primary)" d="M109.46 244.04l134.58-134.56-44.12-44.12-61.68 61.68a7.919 7.919 0 0 1-11.21 0l-11.21-11.21c-3.1-3.1-3.1-8.12 0-11.21l61.68-61.68-33.64-33.65C131.47-3.1 111.39-3.1 99 9.29L9.29 99c-12.38 12.39-12.39 32.47 0 44.86l100.17 100.18zm388.47-116.8c18.76-18.76 18.75-49.17 0-67.93l-45.25-45.25c-18.76-18.76-49.18-18.76-67.95 0l-46.02 46.01 113.2 113.2 46.02-46.03zM316.08 82.71l-297 296.96L.32 487.11c-2.53 14.49 10.09 27.11 24.59 24.56l107.45-18.84L429.28 195.9 316.08 82.71zm186.63 285.43l-33.64-33.64-61.68 61.68c-3.1 3.1-8.12 3.1-11.21 0l-11.21-11.21c-3.09-3.1-3.09-8.12 0-11.21l61.68-61.68-44.14-44.14L267.93 402.5l100.21 100.2c12.39 12.39 32.47 12.39 44.86 0l89.71-89.7c12.39-12.39 12.39-32.47 0-44.86z"></path></svg>
+          </div>
+          <h3>Responsive Design
+          </h3>
+          <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo
+            inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-12@xs col-12@sm col-4@md">
+          <div class="icon">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-shield" class="svg-inline--fa fa-user-shield fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="var(--color-primary)" d="M622.3 271.1l-115.2-45c-4.1-1.6-12.6-3.7-22.2 0l-115.2 45c-10.7 4.2-17.7 14-17.7 24.9 0 111.6 68.7 188.8 132.9 213.9 9.6 3.7 18 1.6 22.2 0C558.4 489.9 640 420.5 640 296c0-10.9-7-20.7-17.7-24.9zM496 462.4V273.3l95.5 37.3c-5.6 87.1-60.9 135.4-95.5 151.8zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm96 40c0-2.5.8-4.8 1.1-7.2-2.5-.1-4.9-.8-7.5-.8h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c6.8 0 13.3-1.5 19.2-4-54-42.9-99.2-116.7-99.2-212z"></path></svg>
+          </div>
+          <h3>Web Security</h3>
+          <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo
+            inventore harum ex magni, dicta impedit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                PORTFOLIO                                -->
+<!-- ----------------------------------------------------------------------- -->
+<section class="portfolio bg-accent-light padding-y-xl">
+
 </section>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                                SERVICES                                 -->
-<!-- ----------------------------------------------------------------------- -->
-
-<section class="services height-100vh width-100vw" id="services">
-  <div class="services__content container padding-y-xl text-center">
-    <h1>Services</h1>
-    <h4 class="color-accent-lighter">Lorem ipsum dolor</h4>
-  </div>
-</section>
-
-
-<script src="assets/js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
+
 </html>

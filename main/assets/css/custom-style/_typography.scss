@@ -31,27 +31,27 @@
   :root {
     @include breakpoint(xs) {
       --text-base-size: 1em;
-      --text-scale-ratio: 1;
+      --text-scale-ratio: 1.2;
     }
 
     @include breakpoint(sm) {
-      --text-base-size: 1.25em;
-      --text-scale-ratio: 1.25;
+      --text-base-size: 1.2em;
+      --text-scale-ratio: 1.2;
     }
 
     @include breakpoint(md) {
-      --text-base-size: 1.35em;
-      --text-scale-ratio: 1.35;
+      --text-base-size: 1.3em;
+      --text-scale-ratio: 1.2;
     }
 
     @include breakpoint(lg) {
       --text-base-size: 1.5em;
-      --text-scale-ratio: 1.4;
+      --text-scale-ratio: 1.2;
     }
     
     @include breakpoint(xl) {
       --text-base-size: 2em;
-      --text-scale-ratio: 1.5;
+      --text-scale-ratio: 1.2;
     }
   }
 }
@@ -60,11 +60,11 @@ body {
   font-family: var(--font-primary);
 }
 
-h1 {
+h1, h2 {
   font-family: var(--font-primary);
   font-weight: 900;
 }
-h2, h3, h4 {
+h3, h4 {
   font-family: var(--font-tertiary);
   font-weight: 400;
 }
