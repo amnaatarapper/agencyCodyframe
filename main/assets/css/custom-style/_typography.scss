@@ -33,6 +33,7 @@
       --text-base-size: 1em;
       --text-scale-ratio: 1;
     }
+
     @include breakpoint(sm) {
       --text-base-size: 1.25em;
       --text-scale-ratio: 1.25;
@@ -47,6 +48,7 @@
       --text-base-size: 1.5em;
       --text-scale-ratio: 1.4;
     }
+    
     @include breakpoint(xl) {
       --text-base-size: 2em;
       --text-scale-ratio: 1.5;

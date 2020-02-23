@@ -5,20 +5,29 @@
 @import 'components/**/*.scss';
 
 // Styles
+
+/* -------------------------------------------------------------------------- */
+/*                                   Global                                 */
+/* -------------------------------------------------------------------------- */
+
 a {
     text-decoration: none;
 }
 
+// body {
+//     height: 200vh;
+// }
+/* -------------------------------------------------------------------------- */
+/*                                   Header                                   */
+/* -------------------------------------------------------------------------- */
+
 .header {
+    height: auto;
     position: fixed;
+    padding: 1.5rem 0;
     font-size: .7em;
     background-color: transparent;
-    @include breakpoint(xxs) {
-        padding: 0;
-    }
-    @include breakpoint(md) {
-        padding: 0 3em;
-    }
+    transition: padding .5s;
     .header__logo {
         @include breakpoint(xxs) {
             font-size: 1.1rem;
@@ -37,8 +46,9 @@ a {
         
         li {
             a {
+                transition: color .5s ease;
                 @include breakpoint(xxs) {
-                    color: var(var(--color-accent-darker));
+                    color: var(--color-accent-darker);
                 }
                 @include breakpoint(md) {
                     color: var(--color-white);
@@ -55,18 +65,55 @@ a {
     
 }
 
+.header.scroll {
+    background-color: white;
+    padding: .4rem 0;
+    transition: padding 1s, background-color .5s;
+    .logo, ul li a {
+        color: var(--color-black);
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Hero                                    */
+/* -------------------------------------------------------------------------- */
+
 .hero {
     background: url('../img/hero.jpg');
-    background-position: center;
     background-size: cover;
-    > * {
-        padding-bottom: var(--space-xxxs);
+    background-position: 0 0;
+
+    // Parallax easing on mouse mouvement
+    transform: scale(1.05);
+    transition: .2s;
+    transition-delay: transfrom .1s;
+    .wrapper {
+        > * {
+            padding-bottom: var(--space-xxxs);
+        }
+        
+        a {
+            padding: .7em 1em;
+            &:hover {
+                background-color: darken($color: #fec301, $amount: 5%);
+            }
+        }
     }
-    a {
-        padding: .7em 1em;
-    }
-    a:hover {
-        $primary: #fec301;
-        background-color: darken($primary, $amount: 3%);
+    
+}
+
+.slide-in { 
+    transition: transform 1s, opacity 3s;
+    transition-delay: 1s;
+    animation: slide-in 1.5s forwards;
+}
+@keyframes slide-in {
+    from {
+        opacity: .2;
+        transform: translateY(-20px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
