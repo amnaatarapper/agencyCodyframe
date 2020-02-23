@@ -9,22 +9,16 @@
 /* -------------------------------------------------------------------------- */
 /*                                   Global                                 */
 /* -------------------------------------------------------------------------- */
-
 a {
     text-decoration: none;
 }
-
-// body {
-//     height: 200vh;
-// }
 /* -------------------------------------------------------------------------- */
 /*                                   Header                                   */
 /* -------------------------------------------------------------------------- */
-
 .header {
     height: auto;
     position: fixed;
-    padding: 1.5rem 0;
+    padding: 1.5em 0;
     font-size: .7em;
     background-color: transparent;
     transition: padding .5s;
@@ -67,28 +61,37 @@ a {
 
 .header.scroll {
     background-color: white;
-    padding: .4rem 0;
+    padding: .4em 0;
     transition: padding 1s, background-color .5s;
     .logo, ul li a {
         color: var(--color-black);
     }
 }
 
-
 /* -------------------------------------------------------------------------- */
 /*                                    Hero                                    */
 /* -------------------------------------------------------------------------- */
 
 .hero {
-    background: url('../img/hero.jpg');
-    background-size: cover;
-    background-position: 0 0;
 
-    // Parallax easing on mouse mouvement
-    transform: scale(1.05);
-    transition: .2s;
-    transition-delay: transfrom .1s;
-    .wrapper {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: url('../img/hero.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: scale(1.1);
+        // Parallax easing on mouse mouvement
+        transition: .2s;
+        transition-delay: transfrom .1s;
+    }
+    
+  
+    .container {
         > * {
             padding-bottom: var(--space-xxxs);
         }
@@ -103,17 +106,21 @@ a {
     
 }
 
-.slide-in { 
-    transition: transform 1s, opacity 3s;
-    transition-delay: 1s;
-    animation: slide-in 1.5s forwards;
-}
-@keyframes slide-in {
-    from {
-        opacity: .2;
-        transform: translateY(-20px);
-    } to {
-        opacity: 1;
-        transform: translateY(0);
+/* -------------------------------------------------------------------------- */
+/*                                  SERVICES                                  */
+/* -------------------------------------------------------------------------- */
+
+.services {
+    background-color: var(var(--color-accent-light));
+    font-size: 1rem;
+    h1 {
+        font-size: 2.5em;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    h4 {
+        font-size: 1em;
+        color: var(--color-accent);
+        font-weight: lighter;
     }
 }

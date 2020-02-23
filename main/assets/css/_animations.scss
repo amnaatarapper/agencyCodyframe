@@ -1,0 +1,16 @@
+
+
+.slide-in { 
+    transition: transform 1s, opacity 3s;
+    transition-delay: 1s;
+    animation: slide-in 1.5s forwards;
+}
+@keyframes slide-in {
+    from {
+        opacity: .2;
+        transform: translateY(-20px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

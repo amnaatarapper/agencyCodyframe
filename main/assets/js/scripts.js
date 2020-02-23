@@ -324,10 +324,10 @@ window.addEventListener('scroll', () => {
 
 // Parallax Effect on Hero BG on mouse mouvement
 window.addEventListener('mousemove', (e) => {
-    var hero = document.querySelector('#hero');
+    const heroBg = document.querySelector('.hero__bg');
 
-    var mouseX = e.clientX / 100;
-    var mouseY = e.clientY / 100;
+    const mouseX = e.clientX / 100;
+    const mouseY = e.clientY / 100;
 
-    hero.style.backgroundPosition = mouseX + "px " + mouseY + "px";
+    heroBg.style.backgroundPosition = -mouseX + "px " + -mouseY + "px";
 });

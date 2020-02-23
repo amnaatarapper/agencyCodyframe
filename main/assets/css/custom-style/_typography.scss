@@ -60,11 +60,14 @@ body {
   font-family: var(--font-primary);
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-tertiary);
-  font-weight: 700;
+h1 {
+  font-family: var(--font-primary);
+  font-weight: 900;
 }
-
+h2, h3, h4 {
+  font-family: var(--font-tertiary);
+  font-weight: 400;
+}
 // font family
 .font-primary { font-family: var(--font-primary);}
 .font-secondary { font-family: var(--font-secondary);}

@@ -6,11 +6,11 @@
   @include defineColorHSL(--color-primary-light, 46, 99%, 60%);
   @include defineColorHSL(--color-primary-lighter, 46, 99%, 70%);
 
-  @include defineColorHSL(--color-accent-darker, 210, 17%, 78%);
-  @include defineColorHSL(--color-accent-dark, 210, 17%, 88%);
-  @include defineColorHSL(--color-accent, 210, 17%, 98%);
-  @include defineColorHSL(--color-accent-light, 210, 17%, 99%);
-  @include defineColorHSL(--color-accent-lighter, 210, 17%, 100%);
+  @include defineColorHSL(--color-accent-darker, 210, 7%, 26%);
+  @include defineColorHSL(--color-accent-dark, 210, 7%, 36%);
+  @include defineColorHSL(--color-accent, 210, 7%, 46%);
+  @include defineColorHSL(--color-accent-light, 210, 7%, 56%);
+  @include defineColorHSL(--color-accent-lighter, 210, 7%, 66%);
 
   @include defineColorHSL(--color-black, 240, 8%, 12%);
   @include defineColorHSL(--color-white, 0, 0%, 100%);
