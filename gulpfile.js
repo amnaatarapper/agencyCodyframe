@@ -46,7 +46,7 @@ gulp.task('scripts', function() {
     stream: true
   }))
   .pipe(rename('scripts.min.js'))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(gulp.dest(scriptsJsPath))
   .pipe(browserSync.reload({
     stream: true

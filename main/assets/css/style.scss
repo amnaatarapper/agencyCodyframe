@@ -12,9 +12,11 @@
 html {
     scroll-behavior: smooth;
 }
+
 a {
     text-decoration: none;
 }
+
 .icon {
     height: 60px;
     width: 60px;
@@ -23,6 +25,25 @@ a {
 }
 
 $primary: #fec301;
+
+::selection {
+    background: $primary;
+}
+/* -------------------------------------------------------------------------- */
+/*                                   Loader                                   */
+/* -------------------------------------------------------------------------- */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $primary;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   Header                                   */
 /* -------------------------------------------------------------------------- */
@@ -33,48 +54,59 @@ $primary: #fec301;
     font-size: .7em;
     background-color: transparent;
     transition: padding .5s;
+
     .header__logo {
         @include breakpoint(xxs) {
             font-size: 1.1rem;
         }
+
         @include breakpoint(sm) {
             font-size: 1.4rem;
         }
+
         @include breakpoint(md) {
             font-size: 1.9rem;
         }
+
         @include breakpoint(xl) {
             font-size: 2.3rem;
         }
     }
+
     .header__nav {
-        
+
         li {
             a {
                 transition: color .5s ease;
+
                 @include breakpoint(xxs) {
                     color: var(--color-accent-darker);
                 }
+
                 @include breakpoint(md) {
                     color: var(--color-white);
                 }
-            } 
+            }
+
             a:hover {
                 color: var(--color-primary);
             }
+
             a.active {
                 color: var(--color-primary);
             }
         }
     }
-    
+
 }
 
 .header.scroll {
     background-color: var(--color-white);
     padding: .4em 0;
     transition: padding 1s, background-color .5s;
-    .logo, ul li a {
+
+    .logo,
+    ul li a {
         color: var(--color-black);
     }
 }
@@ -91,33 +123,51 @@ $primary: #fec301;
         position: absolute;
         height: 100%;
         width: 100%;
-        // background: url('../img/hero.jpg');
-        background: url('https://benellimotos.fr/wp-content/uploads/2018/06/TRK_502_mainbanner.jpg');
+
+        &--overlay {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: darken(transparentize($primary, .4), 35%);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        transform: scale(1.1);
-        
-        // Parallax easing on mouse mouvement
-        transition: .1s;
-        transition-delay: transfrom .1s;
-        background-color: darken($primary, $amount: 37%);
         background-blend-mode: overlay;
+        }
+
+        &--video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        // background: url('https://benellimotos.fr/wp-content/uploads/2018/06/TRK_502_mainbanner.jpg');
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: center;
+        // transform: scale(1.1);
+
+        // // Parallax easing on mouse mouvement
+        // transition: .1s;
+        // transition-delay: transfrom .1s;
+        // background-color: darken($primary, $amount: 37%);
+        // background-blend-mode: overlay;
     }
 
     .container {
-        > * {
+        >* {
             padding-bottom: var(--space-xxxs);
         }
-        
+
         a {
             padding: .7em 1em;
+
             &:hover {
                 background-color: darken($primary, $amount: 5%);
             }
         }
     }
-    
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -128,19 +178,28 @@ $primary: #fec301;
     @include breakpoint(xxs) {
         height: 100%;
     }
+
     @include breakpoint(lg) {
         height: 100vh;
+    }
+
+    @include breakpoint(xl) {
+        height: auto;
     }
 
     h2 {
         text-transform: uppercase;
     }
+
     h4 {
         color: var(--color-accent);
     }
+
     [class*="col"] {
         @include breakpoint(xxs) {
-            p, h3 {
+
+            p,
+            h3 {
                 padding: var(--space-xxxxs) 0;
             }
         }
@@ -153,5 +212,79 @@ $primary: #fec301;
 /* -------------------------------------------------------------------------- */
 
 .portfolio {
-    
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+
+        .portfolio__item {
+            position: relative;
+            overflow: hidden;
+            max-height: 85vh;
+
+            @include breakpoint(xxs) {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            @include breakpoint(sm) {
+                width: calc(50% - 1rem);
+                margin-right: .5rem;
+                margin-left: .5rem;
+            }
+
+            @include breakpoint(md) {
+                width: calc(33.33% - 2rem);
+                margin-right: 1rem;
+                margin-left: 1rem;
+            }
+
+            .heart {
+                position: absolute;
+                opacity: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparentize($primary, .15);
+                transition: opacity .5s ease-in;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                i {
+                    opacity: 0;
+                    font-size: 50px;
+                    color: var(--color-accent);
+
+                    transform: scale(.2);
+                    transition: opacity 1s, transform 1s;
+                }
+            }
+
+            a {
+                
+                img {
+                    height: auto;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: transform 3s;
+                }
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.4);
+                }
+
+                .heart {
+                    opacity: 1;
+
+                    i {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
 }
