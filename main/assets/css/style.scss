@@ -388,3 +388,44 @@ a {
         }
     }  
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    TEAM                                    */
+/* -------------------------------------------------------------------------- */
+
+.team {
+    background: url('../img/rain.svg');
+    &__item {
+        font-size: .7em;
+        padding: 15px 0;
+        margin-bottom: 2.5em;
+        transition: box-shadow 1s;
+        border-radius: 6px;
+        
+        &:hover {
+            -webkit-box-shadow: 0px 0px 50px 7px rgba(0,0,0,0.08); 
+            box-shadow: 0px 0px 50px 7px rgba(0,0,0,0.08);
+        }
+
+        > * {
+            margin: .35em 0;
+        }
+        img {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            @include breakpoint(xs) {
+                width: 90px;
+                height: 90px;
+            }
+            @include breakpoint(sm) {
+                width: 130px;
+                height: 130px;
+            }
+            object-fit: cover;
+        }
+        p {
+            font-size: .7em;
+        }    
+    }
