@@ -300,6 +300,7 @@ a {
     &__item {
         font-size: .7em;
         display: flex;
+
         .txt {
             flex: 1;
             padding-top: var(--space-xxs);
@@ -356,6 +357,9 @@ a {
                 border-radius: 50%;
                 z-index: 5;
                 object-fit: cover;
+                
+               
+
             }
         }
 
