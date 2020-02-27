@@ -331,6 +331,12 @@ a {
                     top: 50%;
                     bottom: 50%;
                     transform: translateY(-50%);
+                    @include breakpoint(xxs) {
+                        font-size: .6em;
+                    }
+                    @include breakpoint(sm) {
+                        font-size: inherit;
+                    }
                 }
             }
         }
@@ -380,6 +386,5 @@ a {
                 text-align: right;
             }
         }
-    }
-    
+    }  
 }

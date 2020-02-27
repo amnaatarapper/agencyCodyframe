@@ -372,56 +372,49 @@ function loading() {
 
 // Genie
 
-// const timeline = document.getElementById('about__items');
-// const aboutItems = document.querySelectorAll('.about__item');
-// const aboutItemsArray = [].slice.call(aboutItems);
-
-// // console.group(aboutItemsArray);
-
-// timeline.addEventListener('mouseover', (e) => {
-//   let target = e.target;
-// });
-
-const allCircles = document.querySelectorAll('[data-scale]');
+const allCircles = document.querySelectorAll('[data-genie]');
 const circles = [].slice.call(allCircles);
-// console.log(circles);
-
 
 circles.forEach( circle => {
   circle.addEventListener('mouseover', (event) => {
 
-    let target = event.target;
-    let current = target.parentNode.parentNode;
-    let next = current.nextSibling.nextSibling;
-    let prev = current.previousSibling.previousSibling;
+    const target = event.target;
+    const current = target.parentNode.parentNode;
+    const next = current.nextSibling.nextSibling;
+    const prev = current.previousSibling.previousSibling;
 
     // Previous
-    if (prev.childNodes[3].classList.contains('circle')) {
+    if (prev && prev.childNodes[3].classList.contains('circle')) {
       prev.childNodes[3].style.transform = 'scale(1.1)';
       prev.childNodes[3].style.transition = 'transform .8s';
     }
 
     // Current
-    current.childNodes[3].style.transform = 'scale(1.25)';
+    current.childNodes[3].style.transform = 'scale(1.3)';
     current.childNodes[3].style.transition = 'transform .4s';
 
     // Next
-    if (next.childNodes[3].classList.contains('circle')) {
+    if (next && next.childNodes[3].classList.contains('circle')) {
       next.childNodes[3].style.transform = 'scale(1.1)';
       next.childNodes[3].style.transition = 'transform .8s';
     }
-
-  })
+  });
+  
   circle.addEventListener('mouseout', (event) => {
 
-    let target = event.target;
-    let current = target.parentNode.parentNode;
-    let next = current.nextSibling.nextSibling;
-    let prev = current.previousSibling.previousSibling;
-
-    prev.childNodes[3].style.transform = 'scale(1)';
+    const target = event.target;
+    const current = target.parentNode.parentNode;
+    const next = current.nextSibling.nextSibling;
+    const prev = current.previousSibling.previousSibling;
+    
+    if (prev && prev.childNodes[3].classList.contains('circle')) {
+      prev.childNodes[3].style.transform = 'scale(1)';
+    }
+  
     current.childNodes[3].style.transform = 'scale(1)';
-    next.childNodes[3].style.transform = 'scale(1)';
 
-  })
+    if (next && next.childNodes[3].classList.contains('circle')) {
+      next.childNodes[3].style.transform = 'scale(1)';
+    }
+  });
 });
