@@ -4,11 +4,13 @@
 // Importing Components
 @import 'components/**/*.scss';
 
-// Styles
 
 /* -------------------------------------------------------------------------- */
-/*                                   Global                                 */
+/*                                   Global                                   */
 /* -------------------------------------------------------------------------- */
+// Vars 
+$primary: #fec301;
+
 html {
     scroll-behavior: smooth;
 }
@@ -24,11 +26,12 @@ a {
     background-color: var(--color-accent-darker);
 }
 
-$primary: #fec301;
-
 ::selection {
     background: $primary;
 }
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                                   Loader                                   */
 /* -------------------------------------------------------------------------- */
@@ -180,7 +183,7 @@ $primary: #fec301;
     }
 
     @include breakpoint(lg) {
-        height: 100vh;
+        // height: 100vh;
     }
 
     @include breakpoint(xl) {
@@ -287,4 +290,71 @@ $primary: #fec301;
             }
         }
     }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  ABOUT                                     */
+/* -------------------------------------------------------------------------- */
+
+.about {
+    font-size: .7em;
+    &__item {
+
+        
+        display: flex;
+        margin-bottom: var(--space-lg);
+        .txt {
+            flex: 1;
+            padding-top: var(--space-xxs);
+        }
+        .img {
+            position: relative;
+            margin: 0 20px;
+            @include breakpoint(xxs) {
+                order: -1;
+                width: 70px;
+                height: 70px;
+            }
+            @include breakpoint(sm) {
+                order: 0;
+                width: 120px;
+                height: 120px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                border: 5px solid var(--color-accent);
+                border-radius: 50%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -25%;
+                left: 50%;
+                height: 50%;
+                width: 2px;
+                background-color: var(--color-accent-light);
+                z-index: -1;
+            }
+        }
+        .spacer {
+            flex: 1;
+            @include breakpoint(xxs) {
+                display: none;
+            }
+            @include breakpoint(sm) {
+                display: initial;
+            }
+        }
+        &:nth-child(even) {
+            @include breakpoint(xxs) {
+                text-align: unset;
+            }
+            @include breakpoint(sm) {
+                text-align: right;
+            }
+        }
+    }
+    
 }
