@@ -57,7 +57,7 @@ a {
     font-size: .7em;
     background-color: transparent;
     transition: padding .5s;
-
+    z-index: 999;
     .header__logo {
         @include breakpoint(xxs) {
             font-size: 1.1rem;
@@ -297,19 +297,49 @@ a {
 /* -------------------------------------------------------------------------- */
 
 .about {
-    font-size: .7em;
     &__item {
-
-        
+        font-size: .7em;
         display: flex;
-        margin-bottom: var(--space-lg);
         .txt {
             flex: 1;
             padding-top: var(--space-xxs);
         }
-        .img {
+
+        
+
+        &:not(:last-child) {
+            .circle::after {
+                content: "";
+                position: absolute;
+                bottom: -50%;
+                left: 50%;
+                height: 60%;
+                width: 2px;
+                background-color: var(--color-accent);
+                z-index: 1;
+            }
+        }
+        
+        &:last-child {
+            .circle {
+                border: 10px solid var(--color-contrast-lower);
+                background-color: var(--color-primary);
+                border-radius: 50%;
+                position: relative;
+                p {
+                    position: relative;
+                    color: var(--color-accent-darker);
+                    top: 50%;
+                    bottom: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .circle {
             position: relative;
             margin: 0 20px;
+            z-index: 5;
             @include breakpoint(xxs) {
                 order: -1;
                 width: 70px;
@@ -321,23 +351,15 @@ a {
                 height: 120px;
             }
             img {
+                position: relative;
                 width: 100%;
                 height: 100%;
-                border: 5px solid var(--color-accent);
+                border: 10px solid var(--color-contrast-lower);
                 border-radius: 50%;
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: -25%;
-                left: 50%;
-                height: 50%;
-                width: 2px;
-                background-color: var(--color-accent-light);
-                z-index: -1;
+                z-index: 5;
             }
         }
+
         .spacer {
             flex: 1;
             @include breakpoint(xxs) {
