@@ -305,8 +305,6 @@ a {
             padding-top: var(--space-xxs);
         }
 
-        
-
         &:not(:last-child) {
             .circle::after {
                 content: "";
@@ -319,7 +317,7 @@ a {
                 z-index: 1;
             }
         }
-        
+
         &:last-child {
             .circle {
                 border: 10px solid var(--color-contrast-lower);
@@ -357,6 +355,7 @@ a {
                 border: 10px solid var(--color-contrast-lower);
                 border-radius: 50%;
                 z-index: 5;
+                object-fit: cover;
             }
         }
 
