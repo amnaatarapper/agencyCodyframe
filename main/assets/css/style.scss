@@ -396,16 +396,39 @@ a {
 
 .team {
     background: url('../img/rain.svg');
+    &__content {
+        .alternate {
+            animation-name: flashy;
+            animation-iteration-count: infinite;
+            animation-duration: 100ms;
+
+            @keyframes flashy {
+                0% {
+                    color: $primary;
+                }
+                100% {
+                    color: white;
+                }
+            }
+        }
+    }
     &__item {
+        overflow: hidden;
+        > * {
+            color: var(--color-primary);
+        }
         font-size: .7em;
         padding: 15px 0;
         margin-bottom: 2.5em;
         transition: box-shadow 1s;
         border-radius: 6px;
-        
+        filter: grayscale(100%);
+        opacity: .7;
+        transition: filter 1s opacity 1s;
         &:hover {
-            -webkit-box-shadow: 0px 0px 50px 7px rgba(0,0,0,0.08); 
-            box-shadow: 0px 0px 50px 7px rgba(0,0,0,0.08);
+            box-shadow: 0px 0px 50px 7px transparentize($primary, .1);
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         > * {
@@ -415,6 +438,7 @@ a {
             border-radius: 50%;
             width: 130px;
             height: 130px;
+            transition: transform 1s;
             @include breakpoint(xs) {
                 width: 90px;
                 height: 90px;
@@ -425,7 +449,19 @@ a {
             }
             object-fit: cover;
         }
+        &:hover {
+            img {
+                transform: rotate(-40deg);
+            } 
+        }
         p {
             font-size: .7em;
-        }    
+        }
+        
+        &__socials {
+            i {
+                margin: 0 .3em;
+            }
+        }
     }
+}
