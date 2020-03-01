@@ -25,9 +25,9 @@
 
 <body data-theme="default" data-spy="scroll" data-target=".navbar" data-offset="50" onload=loading()>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                                  MENU                                   -->
-<!-- ----------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                  MENU                                   -->
+  <!-- ----------------------------------------------------------------------- -->
   <header class="header bg-primary position-fixed top-0 width-100% js-header">
     <div class="container">
       <div class="header__container container max-width-lg">
@@ -79,7 +79,7 @@
 
   <section class="services width-100vw bg-contrast-lower padding-y-lg" id="services">
     <div class="services__content container padding-bottom-md text-center">
-      <h2>Services</h2>
+      <h2 class="text-uppercase">Services</h2>
       <h4 class="color-accent-lighter">Lorem ipsum dolor</h4>
     </div>
     <div class="services__content padding-y-md container text-center">
@@ -135,7 +135,7 @@
   <section class="portfolio bg-accent-light padding-y-lg " id="portfolio">
     <div class="container">
       <div class="portfolio__content container padding-bottom-md text-center">
-        <h2 class="text-capitalize">portfolio</h2>
+        <h2 class="text-uppercase">portfolio</h2>
         <h4 class="color-accent-lighter">Lorem ipsum dolor</h4>
       </div>
 
@@ -194,7 +194,7 @@
   <section class="about bg-contrast-lower padding-y-lg" id="about">
     <div class="about__items container" id="about__items">
       <div class="about__content container padding-bottom-md text-center">
-        <h2 class="text-capitalize">About</h2>
+        <h2 class="text-uppercase">About</h2>
         <h4 class="color-accent-lighter">Lorem ipsum dolor</h4>
       </div>
 
@@ -303,7 +303,7 @@
 
   <section class="team padding-y-lg" id="team">
     <div class="team__content container text-center padding-bottom-md">
-      <h2 class="text-capitalize alternate">Team</h2>
+      <h2 class="text-uppercase alternate">Team</h2>
       <h4 class="alternate">Lorem ipsum dolor</h4>
     </div>
     <div class="team__items grid container text-center">
@@ -347,11 +347,32 @@
           <i class="fa fa-linkedin" aria-hidden="true"></i>
         </div>
       </div>
-
     </div>
-
     </div>
   </section>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 CONTACT                                 -->
+<!-- ----------------------------------------------------------------------- -->
+<section class="contact padding-y-lg width-100vw" id="contact">
+  <div class="contact__content container text-center padding-bottom-lg">
+    <h2 class="text-uppercase">contact</h2>
+    <h4>Lorem ipsum dolor</h4>
+  </div>
+  <div class="contact__form container">
+      <form class="grid grid-gap-lg text-center">
+        <div class="col-12 col-6@sm flex flex-column justify-between">
+          <input type="text" name="name" placeholder="Name...">
+          <input type="email" name="email" placeholder="Email...">
+          <input type="text" name="phone" placeholder="Phone...">
+        </div>
+        <div class="col-12 col-6@sm">
+          <textarea name="message" placeholder="Message..."></textarea>
+        </div>
+        <input class="col-3@sm btn btn--primary btn--md color-black" type="submit" value="Send">
+      </form>
+  </div>
+</section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

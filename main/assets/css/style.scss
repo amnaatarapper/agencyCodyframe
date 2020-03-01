@@ -18,6 +18,9 @@ html {
 a {
     text-decoration: none;
 }
+:focus {
+    outline: 0;
+}
 
 .icon {
     height: 60px;
@@ -124,9 +127,10 @@ body {
 
 .header.scroll {
     background-color: var(--color-white);
-    padding: .4em 0;
     transition: padding 1s, background-color .5s;
-
+    @include breakpoint(lg) {
+        padding: .2em 0;
+    }
     .logo,
     ul li a {
         color: var(--color-black);
@@ -163,18 +167,7 @@ body {
             width: 100%;
             object-fit: cover;
         }
-        // background: url('https://benellimotos.fr/wp-content/uploads/2018/06/TRK_502_mainbanner.jpg');
-        // background-size: cover;
-        // background-repeat: no-repeat;
-        // background-position: center;
-        // transform: scale(1.1);
-
-        // // Parallax easing on mouse mouvement
-        // transition: .1s;
-        // transition-delay: transfrom .1s;
-        // background-color: darken($primary, $amount: 37%);
-        // background-blend-mode: overlay;
-    }
+   }
 
     .container {
         >* {
@@ -207,10 +200,6 @@ body {
 
     @include breakpoint(xl) {
         height: auto;
-    }
-
-    h2 {
-        text-transform: uppercase;
     }
 
     h4 {
@@ -423,19 +412,17 @@ body {
 
             @keyframes flashy {
                 0% {
-                    color: $primary;
+                    color: var(--color-primary);
                 }
                 100% {
-                    color: white;
+                    color: var(--color-white);
                 }
             }
         }
     }
     &__item {
         overflow: hidden;
-        > * {
-            color: var(--color-primary);
-        }
+        color: var(--color-primary);
         font-size: .7em;
         padding: 15px 0;
         margin-bottom: 2.5em;
@@ -474,6 +461,7 @@ body {
             } 
         }
         p {
+            color: inherit;
             font-size: .7em;
         }
         
@@ -482,5 +470,48 @@ body {
                 margin: 0 .3em;
             }
         }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   CONTACT                                  */
+/* -------------------------------------------------------------------------- */
+.contact {
+    background-color: var(--color-accent-darker);
+    background-image: url('../img/contact-bg.png');
+    background-position: center;
+    color: var(--color-primary);
+
+    &__form {
+        font-size: .7em;
+        padding: 0 1em;
+        input {
+            width: 100%;
+            padding: 15px;
+        }
+        input:not(:last-child) {
+            margin-bottom: 1em;
+        }
+        input:focus, textarea:focus {
+            border: 3px solid var(--color-primary);
+        }
+        input.error, textarea.error {
+            border: 3px solid var(--color-error);
+        }
+        input[type="submit"] {
+            &:hover {
+                background-color: darken($primary, 5%);
+            }
+        }
+        input, textarea {
+            border-radius: 6px;
+        }
+        textarea {
+            color: var(--color-accent-dark);
+            width: 100%;
+            height: 240px;
+            padding: 15px;
+        }
+
     }
 }
