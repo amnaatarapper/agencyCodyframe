@@ -351,28 +351,28 @@
     </div>
   </section>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                                 CONTACT                                 -->
-<!-- ----------------------------------------------------------------------- -->
-<section class="contact padding-y-lg width-100vw" id="contact">
-  <div class="contact__content container text-center padding-bottom-lg">
-    <h2 class="text-uppercase">contact</h2>
-    <h4>Lorem ipsum dolor</h4>
-  </div>
-  <div class="contact__form container">
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                 CONTACT                                 -->
+  <!-- ----------------------------------------------------------------------- -->
+  <section class="contact padding-y-lg width-100vw" id="contact">
+    <div class="contact__content container text-center padding-bottom-lg">
+      <h2 class="text-uppercase">contact</h2>
+      <h4>Lorem ipsum dolor</h4>
+    </div>
+    <div class="contact__form container">
       <form class="grid grid-gap-lg text-center">
         <div class="col-12 col-6@sm flex flex-column justify-between">
-          <input type="text" name="name" placeholder="Name...">
-          <input type="email" name="email" placeholder="Email...">
-          <input type="text" name="phone" placeholder="Phone...">
+          <input type="text" name="name" placeholder="Name..." required>
+          <input type="email" name="email" placeholder="Email..." required>
+          <input type="number" name="phone" placeholder="Phone..." required>
         </div>
         <div class="col-12 col-6@sm">
-          <textarea name="message" placeholder="Message..."></textarea>
+          <textarea name="message" placeholder="Message..." required></textarea>
         </div>
-        <input class="col-3@sm btn btn--primary btn--md color-black" type="submit" value="Send">
+        <button class="col-3@sm btn btn--primary btn--md color-black" type="submit">Send</button>
       </form>
-  </div>
-</section>
+    </div>
+  </section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

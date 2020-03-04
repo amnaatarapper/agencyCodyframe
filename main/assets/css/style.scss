@@ -495,9 +495,6 @@ body {
         input:focus, textarea:focus {
             border: 3px solid var(--color-primary);
         }
-        input.error, textarea.error {
-            border: 3px solid var(--color-error);
-        }
         input[type="submit"] {
             &:hover {
                 background-color: darken($primary, 5%);
@@ -512,6 +509,15 @@ body {
             height: 240px;
             padding: 15px;
         }
-
+        
+        // Form states
+        .validated {
+            input:valid, textarea:valid {
+                border: 3px solid var(--color-success);
+            }
+            input:invalid, textarea:invalid {
+                border: 3px solid var(--color-error);
+            }
+        }    
     }
 }
