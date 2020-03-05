@@ -1,4 +1,7 @@
-// Style Navbar on scroll event
+/* -------------------------------------------------------------------------- */
+/*                                     NAV                                    */
+/* -------------------------------------------------------------------------- */
+
 window.addEventListener('scroll', () => {
   let header = document.querySelector('header');
   header.classList.toggle('scroll', window.scrollY > 0);
@@ -13,7 +16,9 @@ window.addEventListener('scroll', () => {
 //     heroBg.style.backgroundPosition = -mouseX + "px " + -mouseY + "px";
 // });
 
-// Loader
+/* -------------------------------------------------------------------------- */
+/*                                   LOADER                                   */
+/* -------------------------------------------------------------------------- */
 
 const loader = document.createElement('div');
 loader.className = 'loader';
@@ -53,7 +58,9 @@ function loading() {
 };
 
 
-// Genie
+/* -------------------------------------------------------------------------- */
+/*                                    GENIE                                   */
+/* -------------------------------------------------------------------------- */
 
 const allCircles = document.querySelectorAll('[data-genie]');
 const circles = [].slice.call(allCircles);
@@ -109,3 +116,37 @@ submit.addEventListener('click', e => {
   form.classList.toggle('validated');
 })
 
+
+/* -------------------------------------------------------------------------- */
+/*                                    GSAP                                    */
+/* -------------------------------------------------------------------------- */
+
+// HERO
+const hero_timeline = new TimelineMax();
+hero_timeline
+  .from('.hero__content', 1, {y: -100, opacity: 0, ease: Power4.easeOut})
+  .from('.hero__btn', .25, {width: 0, height: 0, autoAlpha: 0, delay: .5})
+
+// MENU
+const header_timeline = new TimelineMax();
+header_timeline
+  .staggerFrom('.header__item', .35, {cycle:{y: [15, -15]}, opacity: 0, ease: Power4.easeOut}, .2)
+
+// SERVICES
+const services_timeline = new TimelineMax();
+services_timeline
+  .staggerFrom('.service', 1.5, {y: -30, x: 10, autoAlpha: 0, ease: Power4.easeOut}, .5)
+  .staggerFrom('.icon', 1.5, {scale: 3, autoAlpha: 0, ease: Power4.easeOut},.25, '-=2')
+  .fromTo('.service-txt', 1, {autoAlpha: 0, y: -10}, {autoAlpha: 1, y: 0})
+
+// PORTFOLIO
+const portfolio_timeline = new TimelineMax();
+portfolio_timeline
+  .from('.portfolio__item', 2, {y: 15, skewX: '5', ease: Power4.easeOut})
+
+// ABOUT
+var circle_after = CSSRulePlugin.getRule('.about__item:not(:last-child) .circle::after');
+const about_timeline = new TimelineMax();
+about_timeline
+  .staggerFrom('.about__item', 1, {cycle: {x: [20, -20]}, autoAlpha: 0}, .25)
+  .from(circle_after, 1, {cssRule:{height: '0%'}})

@@ -169,7 +169,7 @@ body {
         }
    }
 
-    .container {
+    .hero__content {
         >* {
             padding-bottom: var(--space-xxxs);
         }
@@ -223,6 +223,7 @@ body {
 /* -------------------------------------------------------------------------- */
 
 .portfolio {
+    perspective: (600px);
     &__items {
         display: flex;
         flex-wrap: wrap;
@@ -316,11 +317,11 @@ body {
 
         &:not(:last-child) {
             .circle::after {
-                content: "";
+                content: " ";
                 position: absolute;
                 bottom: -50%;
                 left: 50%;
-                height: 60%;
+                height: 60%; 
                 width: 2px;
                 background-color: var(--color-accent);
                 z-index: 1;
