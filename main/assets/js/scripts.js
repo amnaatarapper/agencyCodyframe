@@ -316,12 +316,35 @@ Math.easeInOutQuad = function (t, b, c, d) {
 	};
 }());
 /* -------------------------------------------------------------------------- */
+/*                                    VARS                                    */
+/* -------------------------------------------------------------------------- */
+const loader = document.createElement('div');
+const body = document.querySelector('body');
+const allCircles = document.querySelectorAll('[data-genie]');
+const form = document.querySelector('form');
+const submit = document.querySelector('[type=submit]');
+const contact = document.querySelector('#contact');
+
+/* -------------------------------------------------------------------------- */
+/*                                PROGRESS BAR                                */
+/* -------------------------------------------------------------------------- */
+const bodyHeight = window.getComputedStyle(body).getPropertyValue('height');
+const contactHeight = window.getComputedStyle(contact).getPropertyValue('height');
+const scrollableHeight = window.pageYOffset;
+const progressBar = document.querySelector('.progress-bar');
+
+/* -------------------------------------------------------------------------- */
 /*                                     NAV                                    */
 /* -------------------------------------------------------------------------- */
-
 window.addEventListener('scroll', () => {
+  // NAV
   let header = document.querySelector('header');
   header.classList.toggle('scroll', window.scrollY > 0);
+
+  // PROGRESS BAR
+  let scrollProgression = Math.ceil(((window.scrollY * 100) / scrollableHeight));
+  progressBar.style.width = scrollProgression+'vw';
+  progressBar.style.backgroundColor = `hsl(${scrollProgression*3.6}, 100%, 50%)`;
 });
 
 // // Parallax Effect on Hero BG on mouse mouvement
@@ -337,9 +360,9 @@ window.addEventListener('scroll', () => {
 /*                                   LOADER                                   */
 /* -------------------------------------------------------------------------- */
 
-const loader = document.createElement('div');
+
 loader.className = 'loader';
-const body = document.querySelector('body');
+
 body.appendChild(loader);
 
 loader.innerHTML = `
@@ -379,7 +402,7 @@ function loading() {
 /*                                    GENIE                                   */
 /* -------------------------------------------------------------------------- */
 
-const allCircles = document.querySelectorAll('[data-genie]');
+
 const circles = [].slice.call(allCircles);
 
 circles.forEach(circle => {
@@ -426,8 +449,6 @@ circles.forEach(circle => {
   });
 });
 
-const form = document.querySelector('form');
-const submit = document.querySelector('[type=submit]')
 submit.addEventListener('click', e => {
   e.preventDefault();
   form.classList.toggle('validated');
@@ -440,7 +461,7 @@ submit.addEventListener('click', e => {
 // MENU
 const header_timeline = new TimelineMax();
 header_timeline
-  .staggerFrom('.header__item', 1, {cycle:{y: [15, -15]}, opacity: 0, ease: Power4.easeOut}, .2)
+  .staggerFrom('.header__item', 1, {cycle:{y: [15, -15], scale: .5}, opacity: 0, ease: Power4.easeOut}, .2)
 
 // HERO
 const hero_timeline = new TimelineMax();
@@ -458,7 +479,7 @@ services_timeline
 // PORTFOLIO
 const portfolio_timeline = new TimelineMax();
 portfolio_timeline
-  .from('.portfolio__item', 2, {y: 15, skewX: '15', ease: Power4.easeOut})
+  .from('.portfolio__item', 2, {y: 15, skewX: '7', autoAlpha: 0, ease: Power4.easeOut})
 
 // ABOUT
 var circle_after = CSSRulePlugin.getRule('.about__item:not(:last-child) .circle::after');
@@ -466,4 +487,47 @@ const about_timeline = new TimelineMax();
 about_timeline
   .staggerFrom('.about__item', 1, {cycle: {x: [20, -20]}, autoAlpha: 0, ease: Power4.easeOut}, .25)
   .staggerFrom('.about__txt', 1, {cycle: {x: [-20, 20]}, autoAlpha: 0, ease: Power4.easeOut}, .25, '-=2.5')
-  .from(circle_after, 1, {cssRule:{height: '0%'}, ease: Power4.easeOut}, '-=1')
+  .from(circle_after, 1, {cssRule:{height: '0%'}, ease: Power4.easeOut}, '-=.5')
+
+
+// Scroll behaviour
+
+const controller = new ScrollMagic.Controller();
+
+const services_scene = new ScrollMagic.Scene({
+  triggerElement: '#services',
+  triggerHook: .2,
+  duration: 0
+});
+
+services_scene
+  .setTween(services_timeline)
+  .addTo(controller)
+  .addIndicators()
+  .reverse(false)
+
+const portfolio_scene = new ScrollMagic.Scene({
+  triggerElement: '#portfolio',
+  triggerHook: .2,
+  duration: 0
+});
+  
+portfolio_scene
+  .setTween(portfolio_timeline)
+  .addTo(controller)
+  .addIndicators()
+  .reverse(false)
+
+const about_scene = new ScrollMagic.Scene({
+  triggerElement: '#about',
+  triggerHook: .2,
+  duration: 0
+  });
+
+about_scene
+  .setTween(about_timeline)
+  .addTo(controller)
+  .addIndicators()
+  .reverse(false)
+
+

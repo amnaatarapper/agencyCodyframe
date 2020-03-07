@@ -54,6 +54,23 @@ a {
 body {
     overflow-x: hidden;
 }
+
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    height: 5px;
+    background-color: var(--color-primary);
+    z-index: 8;
+    border-radius: 0 15px 15px 0;
+    transition: background-color 1.5s ease-out, width 1s ease-out;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                Progress Bar                                */
+/* -------------------------------------------------------------------------- */
+
+
 /* -------------------------------------------------------------------------- */
 /*                                   Loader                                   */
 /* -------------------------------------------------------------------------- */
@@ -64,7 +81,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: $primary;
-    z-index: 99999;
+    z-index: 10;
     display: flex;
     align-items: center;
 }
@@ -79,7 +96,7 @@ body {
     font-size: .7em;
     background-color: transparent;
     transition: padding .5s;
-    z-index: 999;
+    z-index: 9;
     .header__logo {
         @include breakpoint(xxs) {
             font-size: 1.1rem;
@@ -190,6 +207,7 @@ body {
 /* -------------------------------------------------------------------------- */
 
 .services {
+    position: relative;
     @include breakpoint(xxs) {
         height: 100%;
     }
@@ -428,7 +446,7 @@ body {
         margin-bottom: 2.5em;
         transition: box-shadow 1s;
         border-radius: 6px;
-        filter: grayscale(100%);
+        filter: grayscale(80%);
         opacity: .7;
         transition: filter 1s opacity 1s;
         &:hover {
