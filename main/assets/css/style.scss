@@ -61,12 +61,12 @@ body {
 /* -------------------------------------------------------------------------- */
 .progress-bar {
     position: fixed;
-    bottom: 0;
-    height: 5px;
+    right: 0;
+    width: 7px;
     background-color: var(--color-primary);
-    z-index: 8;
-    border-radius: 0 15px 15px 0;
-    transition: background-color 1.7s ease-out, width .7s ease-out;
+    z-index: 10;
+    border-radius: 0 0 15px 15px;
+    transition: background-color 1.7s ease-out, width .7s ease-out, box-shadow 1.7s;
 }
 
 /* -------------------------------------------------------------------------- */

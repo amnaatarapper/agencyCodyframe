@@ -26,8 +26,11 @@ window.addEventListener('scroll', () => {
 
   // PROGRESS BAR
   let scrollProgression = Math.ceil((window.scrollY * 100) / scrollableHeight);
-  progressBar.style.width = scrollProgression+'vw';
-  progressBar.style.backgroundColor = `hsl(${scrollProgression*3.6}, 100%, 50%)`;
+  progressBar.style.height = scrollProgression+'vh';
+  const color = `hsl(${scrollProgression*3.6}, 100%, 50%)`;
+  progressBar.style.backgroundColor = color;
+  progressBar.style.boxShadow = `-5px 0 40px ${color}`;
+
 });
 
 /* -------------------------------------------------------------------------- */
