@@ -11,11 +11,22 @@ const contact = document.querySelector('#contact');
 /* -------------------------------------------------------------------------- */
 /*                                PROGRESS BAR                                */
 /* -------------------------------------------------------------------------- */
-const bodyHeight = window.getComputedStyle(body).getPropertyValue('height');
-const contactHeight = window.getComputedStyle(contact).getPropertyValue('height');
-const scrollableHeight = parseInt(bodyHeight, 10) - parseInt(contactHeight, 10) - 70;
-const progressBar = document.querySelector('.progress-bar');
+let bodyHeight = window.getComputedStyle(body).getPropertyValue('height');
+let contactHeight = window.getComputedStyle(contact).getPropertyValue('height');
+let scrollableHeight = parseInt(bodyHeight, 10) - parseInt(contactHeight, 10) - 70;
+let progressBar = document.querySelector('.progress-bar');
 
+// Recalculate after the window is resized
+const calcProgress = () => {
+  bodyHeight = window.getComputedStyle(body).getPropertyValue('height');
+  contactHeight = window.getComputedStyle(contact).getPropertyValue('height');
+  scrollableHeight = parseInt(bodyHeight, 10) - parseInt(contactHeight, 10) - 70;
+  progressBar = document.querySelector('.progress-bar');
+  console.log('Resized');
+  
+  return bodyHeight, contactHeight, scrollableHeight, progressBar
+}
+window.onresize = calcProgress();
 /* -------------------------------------------------------------------------- */
 /*                                     NAV                                    */
 /* -------------------------------------------------------------------------- */
